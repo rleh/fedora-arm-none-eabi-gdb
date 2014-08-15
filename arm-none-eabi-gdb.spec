@@ -3,7 +3,7 @@
 
 Name:		%{target}-gdb
 Version:	7.6.2
-Release:	1%{?dist}
+Release:	2%{?dist}
 Summary:	GDB for (remote) debugging ARM targets
 Group:		Development/Debuggers
 License:	GPLv3+
@@ -80,6 +80,9 @@ rm -rf $RPM_BUILD_ROOT
 %{_includedir}/gdb/jit-reader.h
 
 %changelog
+* Fri Aug 15 2014 Fedora Release Engineering <rel-eng@lists.fedoraproject.org> - 7.6.2-2
+- Rebuilt for https://fedoraproject.org/wiki/Fedora_21_22_Mass_Rebuild
+
 * Tue Jun 17 2014 Jérôme Glisse <jglisse@redhat.com> 7.6.2-1
 - Drop texinfo patch, update to 7.6.2, fix rpath and other rpmlint warnings and errors.
 
