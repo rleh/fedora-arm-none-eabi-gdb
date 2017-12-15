@@ -3,7 +3,7 @@
 
 Name:		%{target}-gdb
 Version:	7.6.2
-Release:	7%{?dist}
+Release:	8%{?dist}
 Summary:	GDB for (remote) debugging ARM targets
 Group:		Development/Debuggers
 License:	GPLv3+
@@ -13,7 +13,7 @@ Source0:	http://ftp.gnu.org/gnu/gdb/gdb-%{version}.tar.bz2
 BuildRoot:	%(mktemp -ud %{_tmppath}/%{name}-%{version}-%{release}-XXXXXX)
 BuildRequires:	texinfo
 BuildRequires:	ncurses-devel
-BuildRequires:	python-devel
+BuildRequires:	python2-devel
 BuildRequires:	texinfo-tex
 BuildRequires:	expat-devel
 
@@ -80,6 +80,10 @@ rm -rf $RPM_BUILD_ROOT
 %{_includedir}/gdb/jit-reader.h
 
 %changelog
+* Fri Dec 15 2017 Iryna Shcherbina <ishcherb@redhat.com> - 7.6.2-8
+- Update Python 2 dependency declarations to new packaging standards
+  (See https://fedoraproject.org/wiki/FinalizingFedoraSwitchtoPython3)
+
 * Wed Aug 02 2017 Fedora Release Engineering <releng@fedoraproject.org> - 7.6.2-7
 - Rebuilt for https://fedoraproject.org/wiki/Fedora_27_Binutils_Mass_Rebuild
 
