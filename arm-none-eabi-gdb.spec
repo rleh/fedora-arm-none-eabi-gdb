@@ -10,7 +10,6 @@ License:	GPLv3+
 URL:		http://sources.redhat.com/gdb/
 Source0:	http://ftp.gnu.org/gnu/gdb/gdb-%{version}.tar.bz2
 
-BuildRoot:	%(mktemp -ud %{_tmppath}/%{name}-%{version}-%{release}-XXXXXX)
 BuildRequires:	texinfo
 BuildRequires:	ncurses-devel
 BuildRequires:	python2-devel
