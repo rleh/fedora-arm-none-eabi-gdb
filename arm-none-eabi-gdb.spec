@@ -62,9 +62,6 @@ rm -f $RPM_BUILD_ROOT%{_libdir}/lib%{target}-sim.a
 # Non-linux targets don't have syscalls
 rm -rf $RPM_BUILD_ROOT%{_prefix}/share/gdb/syscalls
 
-%clean
-rm -rf $RPM_BUILD_ROOT
-
 %files
 %defattr(-,root,root,-)
 %doc gdb-%{version}/{COPYING?,COPYING?.LIB}
