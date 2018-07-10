@@ -64,7 +64,6 @@ rm -f $RPM_BUILD_ROOT%{_libdir}/lib%{target}-sim.a
 rm -rf $RPM_BUILD_ROOT%{_prefix}/share/gdb/syscalls
 
 %files
-%defattr(-,root,root,-)
 %doc gdb-%{version}/{COPYING?,COPYING?.LIB}
 
 %{_bindir}/%{target}-*
@@ -73,7 +72,6 @@ rm -rf $RPM_BUILD_ROOT%{_prefix}/share/gdb/syscalls
 %{_datarootdir}/gdb-%{target}-%{version}/*
 
 %files devel
-%defattr(-,root,root,-)
 %{_includedir}/gdb/jit-reader.h
 
 %changelog
