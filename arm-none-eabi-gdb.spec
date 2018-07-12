@@ -3,7 +3,7 @@
 
 Name:		%{target}-gdb
 Version:	7.6.2
-Release:	9%{?dist}
+Release:	10%{?dist}
 Summary:	GDB for (remote) debugging ARM targets
 Group:		Development/Debuggers
 License:	GPLv3+
@@ -75,6 +75,9 @@ rm -rf $RPM_BUILD_ROOT%{_prefix}/share/gdb/syscalls
 %{_includedir}/gdb/jit-reader.h
 
 %changelog
+* Thu Jul 12 2018 Fedora Release Engineering <releng@fedoraproject.org> - 7.6.2-10
+- Rebuilt for https://fedoraproject.org/wiki/Fedora_29_Mass_Rebuild
+
 * Wed Feb 07 2018 Fedora Release Engineering <releng@fedoraproject.org> - 7.6.2-9
 - Rebuilt for https://fedoraproject.org/wiki/Fedora_28_Mass_Rebuild
 
