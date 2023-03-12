@@ -27,16 +27,16 @@ This is a version of GDB, the GNU Project debugger, for (remote)
 debugging %{target} binaries. GDB allows you to see and modify what is
 going on inside another program while it is executing.
 
-# %package devel
-# Summary: GDB for (remote) debugging ARM targets
-# Group: Development/Debuggers
-# Requires: %{name} = %{version}-%{release}
-#
-# %description devel
-# This is a version of GDB, the GNU Project debugger, for (remote)
-# debugging %{target} binaries.  GDB allows you to see and modify what is
-# going on inside another program while it is executing.  This package
-# contains development headers for working with gdb.
+%package devel
+Summary: GDB for (remote) debugging ARM targets
+Group: Development/Debuggers
+Requires: %{name} = %{version}-%{release}
+
+%description devel
+This is a version of GDB, the GNU Project debugger, for (remote)
+debugging %{target} binaries.  GDB allows you to see and modify what is
+going on inside another program while it is executing.  This package
+contains development headers for working with gdb.
 
 %prep
 %{gpgverify} --keyring='%{SOURCE2}' --signature='%{SOURCE1}' --data='%{SOURCE0}'
@@ -74,11 +74,14 @@ rm -rf $RPM_BUILD_ROOT%{_prefix}/share/gdb/syscalls
 
 %{_bindir}/%{target}-*
 %{_mandir}/man1/%{target}-*.1.gz
+%{_mandir}/man5/%{target}-*.5.gz
 %dir %{_datarootdir}/gdb-%{target}-%{version}
 %{_datarootdir}/gdb-%{target}-%{version}/*
 
-# %files devel
-# %{_includedir}/gdb/jit-reader.h
+%files devel
+%{_includedir}/gdb/jit-reader.h
+%{_includedir}/sim/callback.h
+%{_includedir}/sim/sim.h
 
 %changelog
 * Sun Mar 12 2023 Raphael Lehmann <raphael+fedora@rleh.de> - 13.1-11
