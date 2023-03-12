@@ -14,6 +14,7 @@ Source2:	gnu-keyring.gpg
 
 BuildRequires:	gcc
 BuildRequires:	gcc-c++
+BuildRequires:	gmp-devel
 BuildRequires:	texinfo
 BuildRequires:	ncurses-devel
 BuildRequires:	python3-devel
