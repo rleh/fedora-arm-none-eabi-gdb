@@ -2,38 +2,42 @@
 %define gdb_datarootdir %{_datarootdir}/gdb-%{target}-%{version}
 
 Name:		%{target}-gdb
-Version:	7.6.2
-Release:	10%{?dist}
+Version:	13.1
+Release:	11%{?dist}
 Summary:	GDB for (remote) debugging ARM targets
 Group:		Development/Debuggers
 License:	GPLv3+
-URL:		http://sources.redhat.com/gdb/
-Source0:	http://ftp.gnu.org/gnu/gdb/gdb-%{version}.tar.bz2
+URL:		https://sourceware.org/gdb/
+Source0:	https://ftp.gnu.org/gnu/gdb/gdb-%{version}.tar.xz
+Source1:	https://ftp.gnu.org/gnu/gdb/gdb-%{version}.tar.xz.sig
+Source2:	gnu-keyring.gpg
 
 BuildRequires:  gcc
 BuildRequires:	texinfo
 BuildRequires:	ncurses-devel
-BuildRequires:	python2-devel
+BuildRequires:	python3-devel
 BuildRequires:	texinfo-tex
 BuildRequires:	expat-devel
+BuildRequires: gnupg2
 
 %description
 This is a version of GDB, the GNU Project debugger, for (remote)
 debugging %{target} binaries. GDB allows you to see and modify what is
 going on inside another program while it is executing.
 
-%package devel
-Summary: GDB for (remote) debugging ARM targets
-Group: Development/Debuggers
-Requires: %{name} = %{version}-%{release}
-
-%description devel
-This is a version of GDB, the GNU Project debugger, for (remote)
-debugging %{target} binaries.  GDB allows you to see and modify what is
-going on inside another program while it is executing.  This package
-contains development headers for working with gdb.
+# %package devel
+# Summary: GDB for (remote) debugging ARM targets
+# Group: Development/Debuggers
+# Requires: %{name} = %{version}-%{release}
+#
+# %description devel
+# This is a version of GDB, the GNU Project debugger, for (remote)
+# debugging %{target} binaries.  GDB allows you to see and modify what is
+# going on inside another program while it is executing.  This package
+# contains development headers for working with gdb.
 
 %prep
+%{gpgverify} --keyring='%{SOURCE2}' --signature='%{SOURCE1}' --data='%{SOURCE0}'
 %setup -q -c -n %{name}
 cd gdb-%{version}
 
@@ -71,10 +75,13 @@ rm -rf $RPM_BUILD_ROOT%{_prefix}/share/gdb/syscalls
 %dir %{_datarootdir}/gdb-%{target}-%{version}
 %{_datarootdir}/gdb-%{target}-%{version}/*
 
-%files devel
-%{_includedir}/gdb/jit-reader.h
+# %files devel
+# %{_includedir}/gdb/jit-reader.h
 
 %changelog
+* Sun Mar 12 2023 Raphael Lehmann <raphael+fedora@rleh.de> - 13.1-11
+- Update to 13.1
+
 * Thu Jul 12 2018 Fedora Release Engineering <releng@fedoraproject.org> - 7.6.2-10
 - Rebuilt for https://fedoraproject.org/wiki/Fedora_29_Mass_Rebuild
 
