@@ -12,15 +12,15 @@ Source0:	https://ftp.gnu.org/gnu/gdb/gdb-%{version}.tar.xz
 Source1:	https://ftp.gnu.org/gnu/gdb/gdb-%{version}.tar.xz.sig
 Source2:	gnu-keyring.gpg
 
-BuildRequires:	gcc
-BuildRequires:	gcc-c++
-BuildRequires:	gmp-devel
-BuildRequires:	texinfo
-BuildRequires:	ncurses-devel
-BuildRequires:	python3-devel
-BuildRequires:	texinfo-tex
-BuildRequires:	expat-devel
-BuildRequires:	gnupg2
+BuildRequires:  expat-devel
+BuildRequires:  gcc
+BuildRequires:  gcc-c++
+BuildRequires:  gmp-devel
+BuildRequires:  gnupg2
+BuildRequires:  ncurses-devel
+BuildRequires:  python3-devel
+BuildRequires:  texinfo
+BuildRequires:  texinfo-tex
 
 %description
 This is a version of GDB, the GNU Project debugger, for (remote)
