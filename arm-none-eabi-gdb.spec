@@ -16,6 +16,7 @@ BuildRequires:  expat-devel
 BuildRequires:  gcc
 BuildRequires:  gcc-c++
 BuildRequires:  gmp-devel
+BuildRequires:  mpfr-devel
 BuildRequires:  gnupg2
 BuildRequires:  ncurses-devel
 BuildRequires:  python3-devel
