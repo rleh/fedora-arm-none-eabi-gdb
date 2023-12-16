@@ -2,8 +2,8 @@
 %define gdb_datarootdir %{_datarootdir}/gdb-%{target}-%{version}
 
 Name:		%{target}-gdb
-Version:	13.1
-Release:	11%{?dist}
+Version:	14.1
+Release:	1%{?dist}
 Summary:	GDB for (remote) debugging ARM targets
 Group:		Development/Debuggers
 License:	GPLv3+
@@ -84,6 +84,9 @@ rm -rf $RPM_BUILD_ROOT%{_prefix}/share/gdb/syscalls
 %{_includedir}/sim/sim.h
 
 %changelog
+* Sat Dec 16 2023 Raphael Lehmann <raphael+fedora@rleh.de> - 14.1-1
+- Update to 14.1
+
 * Sun Mar 12 2023 Raphael Lehmann <raphael+fedora@rleh.de> - 13.1-11
 - Update to 13.1
 
