@@ -23,6 +23,7 @@ podman cp gnu-keyring.gpg {container_name}:/root/rpmbuild/SOURCES/
 
 Install build dependencies and build (from container shell):
 ```sh
+cd
 dnf builddep rpmbuild/SPECS/arm-none-eabi-gdb.spec
 rpmbuild --undefine=_disable_source_fetch -ba rpmbuild/SPECS/arm-none-eabi-gdb.spec
 ```
