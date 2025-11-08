@@ -7,11 +7,11 @@ https://copr.fedorainfracloud.org/coprs/rleh/arm-none-eabi-gdb/
 
 Using Docker/Podman:
 ```sh
-podman run --rm -it fedora:40
+podman run --rm -it fedora:43
 ```
 Inside the container shell:
 ```sh
-dnf install rpmdevtools dnf-plugins-core
+dnf install -y rpmdevtools dnf-plugins-core
 rpmdev-setuptree
 ```
 

@@ -2,7 +2,7 @@
 %define gdb_datarootdir %{_datarootdir}/gdb-%{target}-%{version}
 
 Name:		%{target}-gdb
-Version:	15.2
+Version:	16.3
 Release:	1%{?dist}
 Summary:	GDB for (remote) debugging ARM targets
 Group:		Development/Debuggers
@@ -81,10 +81,11 @@ rm -rf $RPM_BUILD_ROOT%{_prefix}/share/gdb/syscalls
 
 %files devel
 %{_includedir}/gdb/jit-reader.h
-%{_includedir}/sim/callback.h
-%{_includedir}/sim/sim.h
 
 %changelog
+* Sat Nov 08 2025 Raphael Lehmann <raphael+fedora@rleh.de> - 16.3-1
+- Update to 16.3
+
 * Wed Oct 09 2024 Raphael Lehmann <raphael+fedora@rleh.de> - 15.2-1
 - Update to 15.2
 
