@@ -55,6 +55,10 @@ CFLAGS="$RPM_OPT_FLAGS" ../gdb-%{version}/configure --prefix=%{_prefix} \
 	--target=%{target} --disable-nls --disable-werror --with-python --without-doc --with-xml --with-expat
 make %{?_smp_mflags}
 
+%check
+cd build
+(cd gdb; make -k run GDBFLAGS='-batch -ex "maintenance selftest"')
+
 %install
 rm -rf $RPM_BUILD_ROOT
 cd build
