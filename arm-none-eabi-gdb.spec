@@ -23,6 +23,8 @@ BuildRequires:	python3-devel
 BuildRequires:	texinfo
 BuildRequires:	texinfo-tex
 
+Provides: bundled(gnulib)
+
 %description
 This is a version of GDB, the GNU Project debugger, for (remote)
 debugging %{target} binaries. GDB allows you to see and modify what is
