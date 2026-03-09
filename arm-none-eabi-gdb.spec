@@ -10,7 +10,7 @@ License:	GPL-3.0-or-later AND BSD-3-Clause AND FSFAP AND LGPL-2.1-or-later AND G
 URL:		https://sourceware.org/gdb/
 Source0:	https://ftp.gnu.org/gnu/gdb/gdb-%{version}.tar.xz
 Source1:	https://ftp.gnu.org/gnu/gdb/gdb-%{version}.tar.xz.sig
-Source2:	gnu-keyring.gpg
+Source2:	SOURCES/gnu-keyring.gpg
 
 BuildRequires:	expat-devel
 BuildRequires:	gcc
