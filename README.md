@@ -12,7 +12,7 @@ podman build --tag fedora-rpmbuild:43 --file Dockerfile
 
 Run podman/docker image with spec file and SOURCES/ directory mounted:
 ```sh
-podman run --rm -v ./SOURCES/:/root/rpmbuild/SOURCES/:z -v ./arm-none-eabi-gdb.spec:/root/rpmbuild/SPECS/arm-none-eabi-gdb.spec:ro,z -it fedora-rpmbuild:43
+podman run --rm -v ./SOURCES/:/root/rpmbuild/SOURCES/:z -v ./gnu-keyring.gpg:/root/rpmbuild/SOURCES/gnu-keyring.gpg:ro,z -v ./arm-none-eabi-gdb.spec:/root/rpmbuild/SPECS/arm-none-eabi-gdb.spec:ro,z -it fedora-rpmbuild:43
 ```
 
 Install build dependencies and build (from container shell):
