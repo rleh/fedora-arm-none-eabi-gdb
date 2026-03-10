@@ -3,7 +3,7 @@
 
 Name:		%{target}-gdb
 Version:	17.1
-Release:	2%{?dist}
+Release:	3%{?dist}
 Summary:	GDB for (remote) debugging ARM targets
 Group:		Development/Debuggers
 License:	GPL-3.0-or-later AND BSD-3-Clause AND FSFAP AND LGPL-2.1-or-later AND GPL-2.0-or-later AND LGPL-2.0-or-later AND LicenseRef-Fedora-Public-Domain AND GFDL-1.3-or-later AND LGPL-2.0-or-later WITH GCC-exception-2.0 AND GPL-3.0-or-later WITH GCC-exception-3.1 AND GPL-2.0-or-later WITH GNU-compiler-exception AND MIT
@@ -88,6 +88,9 @@ rm -rf $RPM_BUILD_ROOT%{_prefix}/share/gdb/syscalls
 %{_includedir}/gdb/jit-reader.h
 
 %changelog
+* Tue Mar 10 2026 Raphael Lehmann <raphael+fedora@rleh.de> - 17.1-3
+- Packaging improvements
+
 * Tue Mar 10 2026 Raphael Lehmann <raphael+fedora@rleh.de> - 17.1-2
 - Minor packaging improvements
 
