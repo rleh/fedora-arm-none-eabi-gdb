@@ -5,20 +5,14 @@ https://copr.fedorainfracloud.org/coprs/rleh/arm-none-eabi-gdb/
 
 ## How-To build local
 
-Using Docker/Podman:
+Build podman/docker image:
 ```sh
-podman run --rm -it fedora:43
-```
-Inside the container shell:
-```sh
-dnf install -y rpmdevtools dnf-plugins-core
-rpmdev-setuptree
+podman build --tag fedora-rpmbuild:43 --file Dockerfile
 ```
 
-On your machine, copy the Spec file and keyring into the container:
+Run podman/docker image with spec file and SOURCES/ directory mounted:
 ```sh
-podman cp arm-none-eabi-gdb.spec {container_name}:/root/rpmbuild/SPECS/
-podman cp gnu-keyring.gpg {container_name}:/root/rpmbuild/SOURCES/
+podman run --rm -v ./SOURCES/:/root/rpmbuild/SOURCES/:z -v ./gnu-keyring.gpg:/root/rpmbuild/SOURCES/gnu-keyring.gpg:ro,z -v ./arm-none-eabi-gdb.spec:/root/rpmbuild/SPECS/arm-none-eabi-gdb.spec:ro,z -it fedora-rpmbuild:43
 ```
 
 Install build dependencies and build (from container shell):
