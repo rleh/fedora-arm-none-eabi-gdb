@@ -1,4 +1,4 @@
-FROM fedora:43
+FROM fedora:44
 LABEL maintainer="Raphael Lehmann <raphael+docker@rleh.de>"
 LABEL Description="Image for building Fedora packages"
 LABEL org.opencontainers.image.source https://github.com/rleh/fedora-arm-none-eabi-gdb
